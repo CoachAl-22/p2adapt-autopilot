@@ -1,0 +1,14 @@
+Sync new Power2ADAPT client lead emails to Google Sheets (spreadsheetId: 1VaZ3-6G2dZyR5hxFIubU8Y6HTJG_fSjZjQiZ06hyP18).
+
+1) List ALL emails in info@power2adapt.com 'Client leads' folder (limit 50). Include no-reply@thinksmartsoftware.com emails — they are new enrolments.
+2) Get existing sheet data: sheet 'Power2ADAPT Client Leads', range B2:D500 (to check for duplicates).
+3) For each email NOT already in the sheet (match on sender email + date), fetch the full email body.
+4) Append each new email as a row using INSERT_ROWS:
+   - A: sender name (extract from body if sender is no-reply)
+   - B: sender email address
+   - C: subject + 1-sentence summary
+   - D: date as YYYY-MM-DD HH:MM:SS
+   - E-H: blank
+   - I: key details (athlete name, program, session, location)
+   - J-L: blank
+5) Output how many rows were added, or 'No new leads.'
